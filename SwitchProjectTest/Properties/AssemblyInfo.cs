@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Pooslice - https://github.com/pooslice")]
 [assembly: AssemblyProduct("Github CnD")]
-[assembly: AssemblyCopyright("Copyright 2020")]
+[assembly: AssemblyCopyright("Copyright 2020 - 2021")]
 [assembly: AssemblyTrademark("Pooslice - https://github.com/pooslice")]
 [assembly: AssemblyCulture("")]
 
