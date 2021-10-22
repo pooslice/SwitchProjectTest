@@ -1,18 +1,12 @@
-﻿using System;
+﻿using Octokit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Net;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Octokit;
 
 namespace SwitchProjectTest
 {
@@ -179,7 +173,7 @@ namespace SwitchProjectTest
                     downloadFile(getFusee(Release.Assets), workdirvar + "\\fusee.bin");
                 }
 
-                    downloadFile(fileTodl, downloadTo);
+                downloadFile(fileTodl, downloadTo);
             }
 
         }
@@ -191,7 +185,7 @@ namespace SwitchProjectTest
 
             progressBar1.Value = int.Parse(Math.Truncate(percentage).ToString());
         }
-        
+
         //Will check when download is complete and then apply fileHandler() on it
         void client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
@@ -204,7 +198,7 @@ namespace SwitchProjectTest
 
             dlCounter++;
 
-            if(dlCounter == dlCounterTot)
+            if (dlCounter == dlCounterTot)
             {
                 rtb_console.Text += "All files have been downloaded!" + Environment.NewLine;
             }
@@ -242,7 +236,7 @@ namespace SwitchProjectTest
         {
             int counter = 0;
 
-            foreach(var Release in listToCount)
+            foreach (var Release in listToCount)
             {
                 counter++;
             }
@@ -256,14 +250,14 @@ namespace SwitchProjectTest
             string nroFind = "nro";
             string zipFind = "zip";
 
-            foreach(var ReleaseAsset in assetList)
+            foreach (var ReleaseAsset in assetList)
             {
                 if (ReleaseAsset.BrowserDownloadUrl.Contains(nroFind) || ReleaseAsset.BrowserDownloadUrl.Contains(zipFind))
                 {
                     rtb_console.Text += "Found: " + ReleaseAsset.BrowserDownloadUrl + Environment.NewLine;
 
                     return ReleaseAsset.BrowserDownloadUrl;
-                } 
+                }
             }
 
             rtb_console.Text += "No valid files found!" + Environment.NewLine;
@@ -351,7 +345,7 @@ namespace SwitchProjectTest
             }
 
 
-                rtb_console.Text += "File moved." + Environment.NewLine;
+            rtb_console.Text += "File moved." + Environment.NewLine;
 
         }
 
